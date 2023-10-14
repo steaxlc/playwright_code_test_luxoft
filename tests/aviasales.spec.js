@@ -13,7 +13,7 @@ test('ticket search', async ({ page }) => {
     await page.locator('[data-test-id="destination-autocomplete-field"]').fill('berli');//searching for Berlin airport
     await page.locator('[data-test-id="suggest-city-BER"]').click(); //selecting Berlin airport
   
-    await page.locator('[aria-label="Mon Oct 30 2023"]').click(); //Selecting the date
+    await page.locator("//body[@class='page--avia']/div[@class='header --blue']/div[@class='header__form --solo-header --main-page-form --show-form-header']/div[@class='web-app']/div[@class='web-app__page-header-wrap']/div[@class='page-header']/div[@class='page-header__form-set']/div[@class='page-header__form-container']/div[@class='page-header__form']/div[@class='forms-resolver']/div[@class='forms-resolver__forms-wrap']/form[@class='avia-form --home']/div[@class='avia-form__field --dates']/div[@class='trip-duration --avia-form']/div[@class='trip-duration__dropdown']/div[@class='trip-duration__wrap']/div[@class='trip-duration__content']/div[@class='trip-duration__content-body --calendar']/div[@class='trip-duration__calendar-wrapper']/div[@class='calendar-wrapper']/div[@class='calendar']/div[@class='calendar__container']/div[@class='calendar__months']/div[1]/div[3]/div[5]/div[2]").click(); //Selecting the date
   
     await page.locator('[data-test-id="passengers-field"]').click();
     await page.locator('[data-test-id="passengers-adults-field"] a').nth(1).click(); //adding +1 adult
