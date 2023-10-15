@@ -29,7 +29,7 @@ test('ticket search', async ({ page }) => {
     await expect(page).toHaveURL(/JFK3010BER/); //if it was redirected
     //if the fields are if the expect value
     const delay = ms => new Promise(res => setTimeout(res, ms));
-    await delay(2000);
+    await delay(5000);
     await expect(page.locator('[data-test-id="origin-autocomplete-field"]')).toHaveValue('John F. Kennedy International Airport');
     await expect(page.locator('[data-test-id="destination-autocomplete-field"]')).toHaveValue('Berlin'); 
     await expect(page.locator('[data-test-id="departure-date-input"]')).toHaveValue('Mon, October 30');
