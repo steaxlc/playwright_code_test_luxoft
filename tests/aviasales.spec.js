@@ -28,6 +28,7 @@ test('ticket search', async ({ page }) => {
   
     await expect(page).toHaveURL(/JFK3010BER/); //if it was redirected
     //if the fields are if the expect value
+    const delay = ms => new Promise(res => setTimeout(res, ms));
     await delay(2000);
     await expect(page.locator('[data-test-id="origin-autocomplete-field"]')).toHaveValue('John F. Kennedy International Airport');
     await expect(page.locator('[data-test-id="destination-autocomplete-field"]')).toHaveValue('Berlin'); 
@@ -43,7 +44,4 @@ test('ticket search', async ({ page }) => {
     });
     await expect('rgb(46, 48, 53)' === color).toBeTruthy();
 });
-function delay(arg0) {
-    throw new Error('Function not implemented.');
-}
 
