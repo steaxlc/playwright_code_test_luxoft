@@ -28,10 +28,9 @@ test('ticket search', async ({ page }) => {
   
     await expect(page).toHaveURL(/JFK3010BER/); //if it was redirected
     //if the fields are if the expect value
-    const delay = ms => new Promise(res => setTimeout(res, ms));
-    await delay(5000);
     await expect(page.locator('[data-test-id="origin-autocomplete-field"]')).toHaveValue('John F. Kennedy International Airport');
     await expect(page.locator('[data-test-id="destination-autocomplete-field"]')).toHaveValue('Berlin'); 
+    await expect(page.locator('[data-test-id="departure-date-input"]')).toHaveValue('Mon, October 30');
     await expect(page.locator('[data-test-id="return-date-input"]')).toHaveValue('');
     await expect(page.getByText('economy')).toBeTruthy();
     await page.locator('[data-test-id="passengers-field"]').click();
@@ -42,6 +41,5 @@ test('ticket search', async ({ page }) => {
          return window.getComputedStyle(el).getPropertyValue('background-color');
     });
     await expect('rgb(46, 48, 53)' === color).toBeTruthy();
-    await expect(page.locator('[data-test-id="departure-date-input"]')).toHaveValue('Mon, October 30');
 });
 
